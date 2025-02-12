@@ -30,7 +30,7 @@ header.navbar-container{
 
 /* Styling Rule untuk navbar */
 header.navbar-container .logo img{
-  width: 150px;
+  width: 80px;
 }
 
 header.navbar-container .nav-list ul{
@@ -52,13 +52,13 @@ header.navbar-container .nav-list li a{
   text-decoration: none;
   font-size: 1.05rem;
   font-weight: 500;
-  color: #000;
+  color: #2C1A0C;
 
   transition: all 0.2 ease-in-out;
 }
 
 header.navbar-container .nav-list li:hover a{
-  background-color: #425C77;
+  background-color: #6A5849;
   color: #FFF;
 }
 
@@ -88,6 +88,7 @@ main .content .content-description{
 }
 
 main .content .content-description .title{
+  color: #6A5849;
   margin-block: 1rem;
 
   font-size: 3.5rem;
@@ -104,23 +105,23 @@ main .content .content-description button{
   border-radius: 999px;
   margin-block-start: 1rem;
 
-  background-color: #2D3E50;
+  background-color: #6A5849;
 
   font-family: 'Quicksand', sans-serif;
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: 700;
-  color: white;
+  color: #FFF;
 
   cursor: pointer;
   transition: all 0.15s ease-in;
 }
 
 main .content .content-description button:hover{
-  border: 3px solid #2D3E50;
+  border: 3px solid #6A5849;
   background-color: transparent;
 
-  color: #2D3E50;
+  color: #6A5849;
 }
 
 main .content .content-image{
@@ -153,7 +154,7 @@ main aside .social-media ul{
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
   margin: auto;
-  background-color: #2D3E50;
+  background-color: #6A5849;
 
   display: flex;
   flex-flow: column nowrap;
