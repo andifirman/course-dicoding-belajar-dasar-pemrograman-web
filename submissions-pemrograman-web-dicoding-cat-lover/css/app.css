@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body{
   font-family: 'Quicksand', sans-serif;
 
@@ -25,12 +29,25 @@ header.navbar-container{
   align-items: center;
 
   z-index: 9999;
+
+  /* Fix navbar at the top */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: #FFF;
 }
 
+.text-primary{
+  color: #6A5849;
+}
 
 /* Styling Rule untuk navbar */
 header.navbar-container .logo img{
   width: 80px;
+
+  -webkit-user-drag: none;
 }
 
 header.navbar-container .nav-list ul{
@@ -54,7 +71,7 @@ header.navbar-container .nav-list li a{
   font-weight: 500;
   color: #2C1A0C;
 
-  transition: all 0.2 ease-in-out;
+  transition: background-color 0.25s ease-in-out;
 }
 
 header.navbar-container .nav-list li:hover a{
@@ -62,29 +79,53 @@ header.navbar-container .nav-list li:hover a{
   color: #FFF;
 }
 
+/* Button for Login */
+header.navbar-container .nav-list .login-button a{
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #FFF;
+  background-color: #6A5849;
+
+  transition: background-color 0.25s ease-in-out;
+}
+
+header.navbar-container .nav-list .login-button:hover a{
+  border: 1px solid #6A5849;
+  background-color: #FFF;
+  color: #2C1A0C;
+}
+
 
 /* Styling Rule untuk main content */
+/* Content pertama (left align) */
 main{
   flex: 1;
 
   width: 100%;
   max-width: 1200px;
   margin-inline: auto;
-  padding: 2rem 4rem;
+  padding: 7rem 4rem 2rem 4rem;
   
   display: flex;
+  flex-direction: column;  
   align-items: center;
 }
 
 main .content{
-  flex: 1;
+  width: 100%;
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
 }
 
 main .content .content-description{
-  flex: 1 1;
+  flex: 1;
 }
 
 main .content .content-description .title{
@@ -94,7 +135,7 @@ main .content .content-description .title{
   font-size: 3.5rem;
 }
 
-main .content .content-description  p{
+main .content .content-description p{
   font-size: 1.2rem;
   line-height: 1.7rem;
 }
@@ -118,7 +159,7 @@ main .content .content-description button{
 }
 
 main .content .content-description button:hover{
-  border: 3px solid #6A5849;
+  border: 2px solid #6A5849;
   background-color: transparent;
 
   color: #6A5849;
@@ -131,11 +172,107 @@ main .content .content-image{
 }
 
 main .content .content-image img{
-  width: 300px;
+  width: 280px;
   min-width: 250px;
   margin: auto;
   -webkit-user-drag: none;
 }
+
+
+/* Styling untuk konten dengan class content-right-align */
+.content-right-align{
+  display: flex;
+  flex-direction: row-reverse;  
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-top: 5rem;
+}
+
+.content-right-align .content-image{
+  width: 1500px;
+}
+
+/* Styling Rule untuk card (Adopsi section) */
+.gallery{
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.gallery h2{
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.gallery p{
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 3rem;
+}
+
+.card-container{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card{
+  width: 300px;
+  height: 350px;
+  perspective: 1000px;
+}
+
+.card-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card:hover .card-inner{
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; 
+}
+
+.card-front img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.card-back{
+  background-color: #FFF;
+  color: #6A5849;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5rem;
+  border-radius: 15px;
+  transform: rotateY(180deg);
+  border: 2px solid #6A5849;
+}
+
+.card-back h3{
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-back p{
+  font-size: 1rem;
+  color: #777;
+}
+
 
 /* Styling Rule untuk aside (media sosial) */
 main aside{
@@ -176,39 +313,284 @@ main aside .social-media li a{
 }
 
 main aside .social-media li a:hover{
-  color: #89B0D9;
+  color: #BB8F5C;
+}
+
+/* Styling rule untuk contact person */
+.contact-owner {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.contact-form {
+  width: 50%;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  padding: 1rem 2rem;
+  background-color: #6A5849;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #555;
+}
+
+.contact-info {
+  width: 40%;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-header img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-header h3 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.profile-header p {
+  font-size: 1rem;
+  color: #6A5849;
+}
+
+.profile-details p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.8rem;
+}
+
+.profile-details strong {
+  font-weight: bold;
+}
+
+/* Styling Rule untuk footer */
+#footer{
+  padding: 2rem 4rem;
+  background-color: #EEE4D9;
+}
+
+.footer-content{
+  display: flex;
+}
+
+.footer-logo,
+.footer-container,
+.footer-company-contact{
+  flex: 1;
+}
+
+.footer-logo img{
+  margin-top: 2rem;
+  width: 9rem;
+}
+
+.footer-logo p{
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+  color: #6A5849;
+}
+
+.footer-container h4,
+.footer-company-contact h4{
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.footer-content p{
+  margin-bottom: 0.6rem;
+  color: #6A5849;
+}
+
+.footer-container{
+  padding-left: 9.3rem;
+}
+
+.footer-container ul{
+  padding-left: 0;
+}
+
+.footer-container li{
+  list-style-type: none;
+  margin: 0 0 1.3rem;
+}
+
+.footer-container li a{
+  text-decoration: none;
+  color: #6A5849;
+}
+
+
+.footer-copyright{
+  color: #6A5849;
+
+  padding: 1.25rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 200;
+  text-align: center;
 }
 
 /* Mengatur responsivitas mobile device */
 /* Medium devices (768px dan di bawahnya) */
 @media screen and (max-width: 768px){
-  header.navbar-container{
+  /* Responsif untuk header (navbar) */
+  header.navbar-container {
     flex-direction: column;
+    align-items: center; 
+    padding: 1rem 0; 
   }
 
-  header.navbar-container .nav-list ul{
-    flex-wrap: wrap;
-    column-gap: 0.5rem;
+  header.navbar-container .nav-list ul {
+    flex-direction: column; 
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
   }
 
-  main{
-    padding: 1rem 3rem;
+  header.navbar-container .logo img {
+    width: 60px; 
   }
 
-  main .content{
-    flex-direction: column;
-    gap: 2rem;
+  header.navbar-container .nav-list li a {
+    font-size: 1.2rem; 
+    padding: 0.5rem 2rem;
   }
 
-  main .content .content-description .title{
-    font-size: 3rem;
+  header.navbar-container .nav-list .login-button a {
+    font-size: 1.2rem;
+    padding: 0.5rem 2rem;
   }
 
-  main .content .content-description p{
-    font-size: 1rem;
+  /* Responsif untuk main */
+  main {
+    padding: 5rem 2rem 2rem 2rem; 
   }
 
-  main .content .content-image{
-    order: -1;
+  main .content {
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+  }
+
+  main .content .content-description {
+    text-align: center; 
+    margin-bottom: 1.5rem;
+  }
+
+  main .content .content-description .title {
+    font-size: 2.5rem; 
+  }
+
+  main .content .content-description p {
+    font-size: 1.1rem;
+  }
+
+  main .content .content-image {
+    margin-top: 2rem; 
+  }
+
+  main .content .content-image img {
+    width: 200px;
+  }
+
+  /* Responsif untuk card */
+  .card {
+    width: 250px;
+    height: 300px;
+  }
+
+  /* Responsif untuk footer */
+  #footer {
+    padding: 2rem 2rem;
+  }
+
+  .footer-content {
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-logo,
+  .footer-container,
+  .footer-company-contact {
+    flex: none;
+    margin-bottom: 2rem; 
+  }
+
+  .footer-container {
+    padding-left: 0;
+  }
+
+  .footer-container ul {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .footer-logo img {
+    width: 7rem;
+  }
+
+  .footer-container h4,
+  .footer-company-contact h4 {
+    font-size: 1.25rem; 
+  }
+
+  .footer-content p {
+    font-size: 0.9rem; 
+  }
+
+  .footer-copyright {
+    font-size: 0.9rem; 
+    padding: 1.25rem;
   }
 }
