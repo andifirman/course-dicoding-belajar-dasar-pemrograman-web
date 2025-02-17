@@ -49,114 +49,120 @@
 
   <!-- KONTEN HALAMAN -->
   <main>
-    <div class="content content-left-align" id="beranda">
-      <div class="content-description">
-        <h1 class="title"> Teman Kucing </h1>
-        <p>
-          Teman Kucing adalah komunitas yang menyatukan pecinta kucing 
-          serta menjadi tempat berbagi cerita, pengalaman, dan rasa cinta 
-          pada hewan peliharaan yang lucu dan menggemaskan ini 😸
-        </p>
+    <article>
+      <div class="content content-left-align" id="beranda">
+        <div class="content-description">
+          <h1 class="title"> Teman Kucing </h1>
+          <p>
+            Teman Kucing adalah komunitas yang menyatukan pecinta kucing 
+            serta menjadi tempat berbagi cerita, pengalaman, dan rasa cinta 
+            pada hewan peliharaan yang lucu dan menggemaskan ini 😸
+          </p>
 
-        <button> Mari Bergabung </button>
+          <button> Mari Bergabung </button>
+        </div>
+        <div class="content-image">
+          <img src="img/teman-kucing-illustration.png" alt="Dicoding Indonesia">
+        </div>
       </div>
-      <div class="content-image">
-        <img src="img/teman-kucing-illustration.png" alt="Dicoding Indonesia">
+    </article>
+    
+    <article>
+      <div class="content content-right-align" id="sapa-kucing">
+        <div class="content-description">
+          <h1 class="title"> Tebarkan Kebahagiaan </h1>
+          <p>
+            Sapa Kucing dan bermain dengan kucing bikin bahagia, 
+            karena dopamine yang keluar buat mood jadi lebih baik.
+          </p>
+
+          <button> Dapatkan Lokasi </button>
+        </div>
+        <div class="content-image">
+          <img src="img/content-cat.png" alt="Dicoding Indonesia">
+        </div>
       </div>
-    </div>
+    </article>
 
-    <div class="content content-right-align" id="sapa-kucing">
-      <div class="content-description">
-        <h1 class="title"> Tebarkan Kebahagiaan </h1>
-        <p>
-          Sapa Kucing dan bermain dengan kucing bikin bahagia, 
-          karena dopamine yang keluar buat mood jadi lebih baik.
-        </p>
-
-        <button> Dapatkan Lokasi </button>
+    <article>
+      <div class="gallery" id="adopsi">
+        <h2> Adopsi Kucing </h2>
+        <p> Dengan mengadopsi kucing, kamu sudah membantu mereka untuk tetap bertahan hidup dan menikmati indahnya dunia </p>
+        
+        <div class="card-container">
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="img/siamese.jpeg" alt="Kucing Siamese">
+              </div>
+              <div class="card-back">
+                <h3> Kucing Siamese </h3>
+                <p> Teman baru yang elegan, ramah, dan bersemangat </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="img/birman.jpeg" alt="Kucing Birman">
+              </div>
+              <div class="card-back">
+                <h3> Kucing Birman </h3>
+                <p> Mata biru memukau dan tubuh panjang berbulu lebat </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="img/domestik.jpeg" alt="Kucing Domestik">
+              </div>
+              <div class="card-back">
+                <h3> Kucing Domestik </h3>
+                <p> Selalu tampil lucu dan menggemaskan serta enerjik </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="content-image">
-        <img src="img/content-cat.png" alt="Dicoding Indonesia">
-      </div>
-    </div>
+    </article>
 
-
-    <div class="gallery" id="adopsi">
-      <h2> Adopsi Kucing </h2>
-      <p> Dengan mengadopsi kucing, kamu sudah membantu mereka untuk tetap bertahan hidup dan menikmati indahnya dunia </p>
+    <!-- SECTION OWENER PROFILE INFORMATION -->
+    <aside class="aside-profile-information">
+      <div class="contact-owner" id="kontak">
+        <!-- Form Contact -->
+        <div class="contact-form">
+          <h2> Kontak </h2>
+          <form>
+            <label for="email"> Email </label>
+            <input type="email" id="email" name="email" required>
       
-      <div class="card-container">
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="img/siamese.jpeg" alt="Kucing Siamese">
-            </div>
-            <div class="card-back">
-              <h3> Kucing Siamese </h3>
-              <p> Teman baru yang elegan, ramah, dan bersemangat </p>
-            </div>
-          </div>
+            <label for="message"> Pesan </label>
+            <textarea id="message" name="message" required placeholder="Tuliskan pesanmu di sini"></textarea>
+      
+            <button type="submit"> Kirim </button>
+          </form>
         </div>
-        
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="img/birman.jpeg" alt="Kucing Birman">
+      
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="profile">
+            <div class="profile-header">
+              <img src="img/profile.jpg" alt="Profile Picture">
+              <h3> Andi Firmansyah </h3>
+              <p> Data Analyst | UI/UX Enthusiast </p>
             </div>
-            <div class="card-back">
-              <h3> Kucing Birman </h3>
-              <p> Mata biru memukau dan tubuh panjang berbulu lebat </p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="img/domestik.jpeg" alt="Kucing Domestik">
-            </div>
-            <div class="card-back">
-              <h3> Kucing Domestik </h3>
-              <p> Selalu tampil lucu dan menggemaskan serta enerjik </p>
+            <div class="profile-details">
+              <p><strong> Instagram </strong> andifirmansy__ </p>
+              <p><strong> Github </strong> andifirman </p>
+              <p><strong> LinkedIn </strong> Andi Firmansyah </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="contact-owner" id="kontak">
-      <!-- Form Contact -->
-      <div class="contact-form">
-        <h2> Kontak </h2>
-        <form>
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-    
-          <label for="message">Pesan</label>
-          <textarea id="message" name="message" required placeholder="*Pesan wajib diisi."></textarea>
-    
-          <button type="submit">Kirim</button>
-        </form>
-      </div>
-    
-      <!-- Contact Info -->
-      <div class="contact-info">
-        <div class="profile">
-          <div class="profile-header">
-            <img src="img/profile.jpg" alt="Profile Picture">
-            <h3> Andi Firmansyah </h3>
-            <p> Data Analyst | UI/UX Enthusiast </p>
-          </div>
-          <div class="profile-details">
-            <p><strong> Instagram </strong> andifirmansy__ </p>
-            <p><strong> Github </strong> andifirman </p>
-            <p><strong> LinkedIn </strong> Andi Firmansyah </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-
+    </aside>
 
     <!-- SIDE SOCIAL MEDIA MENU -->
     <aside>
@@ -199,9 +205,6 @@
       <p> Copyright &#169;2025 Teman Kucing </p>
     </div>
   </footer>
-  
-
-
 
 </body>
 </html>

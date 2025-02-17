@@ -179,6 +179,13 @@ main .content .content-image img{
 }
 
 
+article {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+
+
 /* Styling untuk konten dengan class content-right-align */
 .content-right-align{
   display: flex;
@@ -407,6 +414,15 @@ main aside .social-media li a:hover{
 .profile-details strong {
   font-weight: bold;
 }
+
+main aside.aside-profile-information {
+  position: relative;
+  margin-top: 2rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+
 
 /* Styling Rule untuk footer */
 #footer{
